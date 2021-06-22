@@ -29,7 +29,8 @@ func main() {
 	app.Use(recover.New())
 
 	//setup routing
-	studentHandler.Route(app)
+	route := app.Group("api/v1/")
+	studentHandler.Route(route)
 
 	log.Fatal(app.Listen(":3000"))
 
