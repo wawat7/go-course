@@ -36,6 +36,7 @@ func (service *service) List() (responses []FormatResponse) {
 }
 
 func (service *service) Create(request FormatRequest) (response FormatResponse) {
+	Validate(request)
 
 	student := Student{
 		Name:        request.Name,
